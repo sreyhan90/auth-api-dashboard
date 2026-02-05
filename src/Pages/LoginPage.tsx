@@ -3,7 +3,18 @@ import { Formik } from "formik";
 import * as Yup from "yup";
 
 function LoginPage() {
-  const validationSchema = Yup.object({});
+  const validationSchema = Yup.object({
+    username: Yup.string()
+      .required("username zorunlu")
+      .min(5, "minumun 5 karakter olmasi lazim "),
+    password: Yup.string()
+      .required("password zorunlu")
+      .min(8, "En az 8 karakter olmalı")
+      .matches(/[A-Z]/, "En az 1 büyük harf olmalı")
+      .matches(/[a-z]/, "En az 1 küçük harf olmalı")
+      .matches(/[0-9]/, "En az 1 rakam olmalı")
+      .matches(/[@$!%*?&]/, "En az 1 özel karakter içermeli (@$!%*?&)"),
+  });
   return (
     <div className="login-page">
       <div className="login-card">
