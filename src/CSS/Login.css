@@ -1,0 +1,138 @@
+/* === GLOBAL RESET (Vite/React için kritik) === */
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+#root {
+  height: 100%;
+}
+
+/* === FULLSCREEN LOGIN PAGE (garanti çözüm) === */
+.login-page {
+  position: fixed; /* <-- en kritik satır */
+  inset: 0; /* top:0 right:0 bottom:0 left:0 */
+  display: grid;
+  place-items: center;
+  padding: clamp(16px, 3vw, 28px);
+
+  background-color: #0b1020;
+  background-image:
+    radial-gradient(
+      1200px 800px at 20% 10%,
+      rgba(99, 102, 241, 0.35),
+      transparent 55%
+    ),
+    radial-gradient(
+      900px 700px at 90% 20%,
+      rgba(34, 197, 94, 0.22),
+      transparent 60%
+    ),
+    radial-gradient(
+      800px 600px at 50% 90%,
+      rgba(56, 189, 248, 0.18),
+      transparent 55%
+    );
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* kart */
+.login-card {
+  width: min(420px, 100%);
+  padding: clamp(18px, 2.5vw, 28px) clamp(16px, 2.4vw, 26px);
+  border-radius: 18px;
+
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(12px);
+
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.55),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.login-title {
+  display: block;
+  font-size: clamp(20px, 2.2vw, 24px);
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  color: rgba(255, 255, 255, 0.92);
+  margin-bottom: clamp(12px, 2vw, 18px);
+}
+
+.login-input {
+  width: 100%;
+  height: 46px;
+  border-radius: 12px;
+  padding: 0 6px;
+  margin-bottom: 12px;
+
+  color: rgba(255, 255, 255, 0.92);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  outline: none;
+
+  box-sizing: border-box; /* ← EKLENDİ */
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.login-input::placeholder {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.login-input:focus {
+  border-color: rgba(99, 102, 241, 0.75);
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.login-btn {
+  width: 100%;
+  height: 46px;
+  border: 0;
+  border-radius: 12px;
+  margin-top: 6px;
+
+  box-sizing: border-box; /* ← EKLENDİ */
+  appearance: none; /* ← EKLENDİ */
+  -webkit-appearance: none; /* ← EKLENDİ */
+
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  color: rgba(255, 255, 255, 0.95);
+
+  background: linear-gradient(
+    135deg,
+    rgba(99, 102, 241, 0.95),
+    rgba(34, 197, 94, 0.85)
+  );
+  box-shadow: 0 14px 30px rgba(99, 102, 241, 0.18);
+
+  cursor: pointer;
+  transition:
+    filter 0.2s ease,
+    transform 0.08s ease;
+}
+
+.login-btn:hover {
+  filter: brightness(1.05);
+}
+
+.login-btn:active {
+  transform: translateY(1px) scale(0.99);
+}
+.error {
+  display: flex;
+  flex-direction: start;
+  width: 100%;
+  margin-top: 0px;
+  margin-bottom: 8px;
+
+  color: red;
+  font-size: 12px;
+  line-height: 1.3;
+}
