@@ -1,6 +1,9 @@
 // src/pages/DashboardHomePage.tsx
 import { Link } from "react-router-dom";
 import "../CSS/Dashboard.css";
+import { useAppDispatch, useAppSelector } from "../app/hooks";
+import { logout } from "../features/auth/authSlice";
+import { useNavigate } from "react-router-dom";
 
 type StatStatus = "idle" | "loading" | "success" | "error";
 
@@ -53,10 +56,16 @@ export default function DashboardHomePage() {
   // Gün 1: placeholder state
   const usersStatus: StatStatus = "idle";
   const productsStatus: StatStatus = "idle";
+  const token = useAppSelector((s) => s.auth.token);
+  const dispatch = useAppDispatch();
+  const navigate = useNavigate();
 
   return (
     <div className="dashboard">
       <header className="dashboard__header">
+        <div className="dashboard__debug">
+          Token exists: <b>{token ? "Yes" : "No"}</b>
+        </div>
         <h1 className="dashboard__title">Dashboard</h1>
         <p className="dashboard__subtitle">
           Overview of your system (Gün 4: route guard, Gün 6: live stats)
@@ -87,6 +96,16 @@ export default function DashboardHomePage() {
           Back to Login
         </Link>
       </div>
+
+      <button
+        className="dashboard__logout"
+        onClick={() => {
+          dispatch(logout());
+          navigate("/login");
+        }}
+      >
+        Logout
+      </button>
 
       <footer className="dashboard__footer">
         Bugün sadece UI iskeleti. Login/token bağlanınca burası protected

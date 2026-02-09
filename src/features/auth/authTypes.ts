@@ -8,5 +8,6 @@ export type LoginResponse = {
   username: string;
   firstName: string;
   lastName: string;
-  token: string;
+  accessToken: string;
+  refreshToken?: string;
 };
