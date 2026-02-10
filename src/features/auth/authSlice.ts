@@ -16,7 +16,7 @@ type AuthState = {
 };
 
 const initialState: AuthState = {
-  token: null,
+  token: localStorage.getItem("accessToken"),
   user: null,
   status: "idle",
   error: null,
@@ -47,6 +47,7 @@ const authSlice = createSlice({
       state.user = null;
       state.status = "idle";
       state.error = null;
+      localStorage.removeItem("accessToken");
     },
     clearAuthError(state) {
       state.error = null;
@@ -62,7 +63,8 @@ const authSlice = createSlice({
         loginUser.fulfilled,
         (state, action: PayloadAction<LoginResponse>) => {
           state.status = "success";
-          state.token = action.payload.token;
+          state.token = action.payload.accessToken;
+          localStorage.setItem("accessToken", action.payload.accessToken);
           state.user = {
             id: action.payload.id,
             username: action.payload.username,

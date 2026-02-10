@@ -16,8 +16,7 @@ function LoginPage() {
       .min(5, "minumun 5 karakter olmasi lazim "),
     password: Yup.string()
       .required("password zorunlu")
-      .min(4, "En az 8 karakter olmalı")
-      .matches(/[a-z]/, "En az 1 küçük harf olmalı"),
+      .min(8, "En az 8 karakter olmalı"),
   });
   return (
     <div className="login-page">
