@@ -1,10 +1,13 @@
 import "./App.css";
 import { Route, Routes, Navigate } from "react-router-dom";
 
-import LoginPage from "../src/Pages/LoginPage";
-import DashboardHomePage from "../src/Pages/DashboardHomePage";
+import LoginPage from "./Pages/LoginPage";
+import DashboardHomePage from "./Pages/DashboardHomePage";
 import ProtectedRoute from "./Routes/ProtectedRoute";
-import { useAppSelector } from "../src/app/hooks";
+import { useAppSelector } from "./app/hooks";
+import UsersPage from "./Pages/UsersPage";
+import UserDetailPage from "./Pages/UserDetailPage";
+import DashboardLayout from "./Layouts/DashboardLayout";
 
 function App() {
   const token = useAppSelector((s) => s.auth.token);
@@ -13,17 +16,22 @@ function App() {
       <Routes>
         <Route path="/" element={<Navigate to="/login" replace />} />
         <Route
-          path="/Login"
+          path="/login"
           element={token ? <Navigate to="/dashboard" replace /> : <LoginPage />}
         />
         <Route
-          path="/Dashboard"
+          path="/dashboard"
           element={
             <ProtectedRoute>
-              <DashboardHomePage />
+              <DashboardLayout />
             </ProtectedRoute>
           }
-        />
+        >
+          <Route index element={<DashboardHomePage />} />
+          <Route path="users" element={<UsersPage />} />
+          <Route path="users/:id" element={<UserDetailPage />} />
+        </Route>
+
         <Route path="*" element={<Navigate to="/login" replace />} />
       </Routes>
     </>
