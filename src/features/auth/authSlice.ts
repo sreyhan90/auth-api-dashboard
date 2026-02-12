@@ -15,9 +15,11 @@ type AuthState = {
   error: string | null;
 };
 
+const storedUser = localStorage.getItem("user");
+
 const initialState: AuthState = {
   token: localStorage.getItem("accessToken"),
-  user: null,
+  user: storedUser ? JSON.parse(storedUser) : null,
   status: "idle",
   error: null,
 };
@@ -48,6 +50,7 @@ const authSlice = createSlice({
       state.status = "idle";
       state.error = null;
       localStorage.removeItem("accessToken");
+      localStorage.removeItem("user");
     },
     clearAuthError(state) {
       state.error = null;
@@ -64,13 +67,15 @@ const authSlice = createSlice({
         (state, action: PayloadAction<LoginResponse>) => {
           state.status = "success";
           state.token = action.payload.accessToken;
-          localStorage.setItem("accessToken", action.payload.accessToken);
-          state.user = {
-            id: action.payload.id,
-            username: action.payload.username,
-            firstName: action.payload.firstName,
-            lastName: action.payload.lastName,
-          };
+          localStorage.setItem(
+            "user",
+            JSON.stringify({
+              id: action.payload.id,
+              username: action.payload.username,
+              firstName: action.payload.firstName,
+              lastName: action.payload.lastName,
+            }),
+          );
         },
       )
       .addCase(loginUser.rejected, (state, action) => {

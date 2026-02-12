@@ -1,5 +1,11 @@
 import { Link } from "react-router-dom";
 import "../CSS/Dashboard.css";
+import { useEffect } from "react";
+import { useAppDispatch, useAppSelector } from "../app/hooks";
+import {
+  fetchProductsCount,
+  fetchUsersCount,
+} from "../features/auth/dashboard/dashboardSlice";
 
 type StatStatus = "idle" | "loading" | "success" | "error";
 
@@ -50,8 +56,21 @@ function StatCard({
 
 export default function DashboardHomePage() {
   // Gün 1: placeholder state
-  const usersStatus: StatStatus = "idle";
-  const productsStatus: StatStatus = "idle";
+  const dispatch = useAppDispatch();
+
+  const {
+    usersCount,
+    productsCount,
+    usersStatus,
+    productsStatus,
+    usersError,
+    productsError,
+  } = useAppSelector((s) => s.dashboard);
+
+  useEffect(() => {
+    dispatch(fetchUsersCount());
+    dispatch(fetchProductsCount());
+  }, [dispatch]);
 
   return (
     <div className="dashboard">
@@ -65,25 +84,24 @@ export default function DashboardHomePage() {
       <div className="dashboard__stats">
         <StatCard
           title="Users"
-          value="—"
-          description="Total registered users (Gün 6'da API ile dolacak)"
+          value={usersCount !== null ? String(usersCount) : "—"}
+          description="Total registered users (live)"
           status={usersStatus}
+          errorText={usersError ?? undefined}
         />
 
         <StatCard
           title="Products"
-          value="—"
-          description="Total available products (Gün 6'da API ile dolacak)"
+          value={productsCount !== null ? String(productsCount) : "—"}
+          description="Total available products (live)"
           status={productsStatus}
+          errorText={productsError ?? undefined}
         />
       </div>
 
       <div className="dashboard__actions">
         <Link to="/dashboard/users" className="dashboard__link">
           Go to Users (Gün 7)
-        </Link>
-        <Link to="/login" className="dashboard__link dashboard__link--muted">
-          Back to Login
         </Link>
       </div>
       <footer className="dashboard__footer">
