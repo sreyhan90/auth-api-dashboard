@@ -1,0 +1,99 @@
+.users-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.users-page__header {
+  margin-bottom: 24px;
+}
+
+.users-page__title {
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.users-page__content {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(14px);
+  padding: 20px;
+  box-shadow:
+    0 18px 55px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+/* State messages */
+
+.users-page__state {
+  padding: 20px;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.users-page__state--error {
+  color: rgba(239, 68, 68, 0.9);
+}
+
+/* Table */
+
+.users-table {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.users-table__head {
+  display: grid;
+  grid-template-columns: 2fr 1fr 2fr;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  opacity: 0.65;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.users-table__row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 2fr;
+  padding: 12px 10px;
+  border-radius: 10px;
+  transition:
+    background 0.2s ease,
+    transform 0.1s ease;
+  cursor: pointer;
+}
+
+.users-table__row:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-1px);
+}
+
+/* Row text */
+
+.users-table__row span {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.users-table__row span:nth-child(3) {
+  opacity: 0.75;
+  font-size: 13px;
+}
+.users-table__user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.users-table__user img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
