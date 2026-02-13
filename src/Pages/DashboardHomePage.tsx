@@ -5,7 +5,7 @@ import { useAppDispatch, useAppSelector } from "../app/hooks";
 import {
   fetchProductsCount,
   fetchUsersCount,
-} from "../features/auth/dashboard/dashboardSlice";
+} from "../features/dashboard/dashboardSlice";
 
 type StatStatus = "idle" | "loading" | "success" | "error";
 
