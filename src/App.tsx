@@ -8,6 +8,7 @@ import { useAppSelector } from "./app/hooks";
 import UsersPage from "./Pages/UsersPage";
 import UserDetailPage from "./Pages/UserDetailPage";
 import DashboardLayout from "./Layouts/DashboardLayout";
+import NotFoundPage from "./Pages/NotFoundPage";
 
 function App() {
   const token = useAppSelector((s) => s.auth.token);
@@ -32,7 +33,7 @@ function App() {
           <Route path="users/:id" element={<UserDetailPage />} />
         </Route>
 
-        <Route path="*" element={<Navigate to="/login" replace />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </>
   );

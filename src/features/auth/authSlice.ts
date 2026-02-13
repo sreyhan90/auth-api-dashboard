@@ -67,15 +67,14 @@ const authSlice = createSlice({
         (state, action: PayloadAction<LoginResponse>) => {
           state.status = "success";
           state.token = action.payload.accessToken;
-          localStorage.setItem(
-            "user",
-            JSON.stringify({
-              id: action.payload.id,
-              username: action.payload.username,
-              firstName: action.payload.firstName,
-              lastName: action.payload.lastName,
-            }),
-          );
+          state.user = {
+            id: action.payload.id,
+            username: action.payload.username,
+            firstName: action.payload.firstName,
+            lastName: action.payload.lastName,
+          };
+          localStorage.setItem("accessToken", action.payload.accessToken);
+          localStorage.setItem("user", JSON.stringify(state.user));
         },
       )
       .addCase(loginUser.rejected, (state, action) => {

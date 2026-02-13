@@ -5,7 +5,7 @@ import { useAppDispatch, useAppSelector } from "../app/hooks";
 import {
   fetchProductsCount,
   fetchUsersCount,
-} from "../features/dashboard/dashboardSlice";
+} from "../features/auth/dashboard/dashboardSlice";
 
 type StatStatus = "idle" | "loading" | "success" | "error";
 
@@ -99,7 +99,7 @@ export default function DashboardHomePage() {
 
       <div className="dashboard__actions">
         <Link to="/dashboard/users" className="dashboard__link">
-          Go to Users 
+          Go to Users
         </Link>
       </div>
       <footer className="dashboard__footer">
