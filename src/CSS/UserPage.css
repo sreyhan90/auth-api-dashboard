@@ -97,3 +97,21 @@
   border-radius: 50%;
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
+.users-search {
+  width: 100%;
+  margin-top: 14px;
+  padding: 12px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.92);
+  outline: none;
+}
+
+.users-search::placeholder {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.users-search:focus {
+  border-color: rgba(99, 102, 241, 0.45);
+}
