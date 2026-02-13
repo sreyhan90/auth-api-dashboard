@@ -76,9 +76,7 @@ export default function DashboardHomePage() {
     <div className="dashboard">
       <header className="dashboard__header">
         <h1 className="dashboard__title">Dashboard</h1>
-        <p className="dashboard__subtitle">
-          Overview of your system (Gün 4: route guard, Gün 6: live stats)
-        </p>
+        <p className="dashboard__subtitle">Overview of your system</p>
       </header>
 
       <div className="dashboard__stats">
@@ -101,7 +99,7 @@ export default function DashboardHomePage() {
 
       <div className="dashboard__actions">
         <Link to="/dashboard/users" className="dashboard__link">
-          Go to Users (Gün 7)
+          Go to Users 
         </Link>
       </div>
       <footer className="dashboard__footer">
