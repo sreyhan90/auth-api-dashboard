@@ -1,0 +1,50 @@
+.error-boundary {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+
+  background-color: #0b1020;
+  background-image:
+    radial-gradient(
+      1200px 800px at 20% 10%,
+      rgba(99, 102, 241, 0.28),
+      transparent 55%
+    ),
+    radial-gradient(
+      900px 700px at 90% 20%,
+      rgba(34, 197, 94, 0.18),
+      transparent 60%
+    );
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.error-boundary__card {
+  padding: 28px;
+  border-radius: 18px;
+
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(12px);
+
+  color: white;
+  text-align: center;
+}
+
+.error-boundary__card button {
+  margin-top: 16px;
+  padding: 10px 16px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+
+  font-weight: 600;
+  color: white;
+
+  background: linear-gradient(
+    135deg,
+    rgba(99, 102, 241, 0.92),
+    rgba(34, 197, 94, 0.72)
+  );
+}
