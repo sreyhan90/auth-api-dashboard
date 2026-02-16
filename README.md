@@ -110,26 +110,28 @@ Squash merge strategy
 
 ##📂 Folder Structure
 src/
- ├── app/
- │   ├── store.ts
- │   └── hooks.ts
- ├── features/
- │   └── auth/
- │       ├── authSlice.ts
- │       ├── authApi.ts
- │       └── authTypes.ts
- ├── Pages/
- │   ├── LoginPage.tsx
- │   ├── DashboardHomePage.tsx
- │   ├── UsersPage.tsx
- │   ├── UserDetailPage.tsx
- │   └── NotFoundPage.tsx
- ├── Layouts/
- │   └── DashboardLayout.tsx
- ├── Components/
- │   ├── Topbar.tsx
- │   └── Sidebar.tsx
- └── CSS/
+  app/
+    store.ts
+    hooks.ts
+  features/
+    auth/
+      authSlice.ts
+      authApi.ts
+      authTypes.ts
+  Pages/
+    LoginPage.tsx
+    DashboardHomePage.tsx
+    UsersPage.tsx
+    UserDetailPage.tsx
+    NotFoundPage.tsx
+  Layouts/
+    DashboardLayout.tsx
+  Components/
+    Topbar.tsx
+    Sidebar.tsx
+    ErrorBoundary.tsx
+  CSS/
+
 
 ##🔑 Demo Credentials
 username: emilys
