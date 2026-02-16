@@ -1,73 +1,193 @@
-# React + TypeScript + Vite
+##📦 Auth + API Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern React dashboard application built with authentication, protected routing, API integration, and production-level error handling.
 
-Currently, two official plugins are available:
+##🚀 Project Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This project simulates a real-world frontend workflow using:
 
-## React Compiler
+-Sprint-based development
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+-Feature branches
 
-## Expanding the ESLint configuration
+-Pull Request workflow
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+-Definition of Done (DoD)
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+-Jira-style ticket breakdown
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+-The goal was not just to build a dashboard, but to follow a real team development process.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+##🛠 Tech Stack
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+-React + Vite + TypeScript
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+-React Router
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+-Redux Toolkit
+
+-Formik + Yup
+
+-Custom CSS (glassmorphism style UI)
+
+-DummyJSON API
+
+##🔐 Features
+#Authentication
+
+-Login with Formik + Yup validation
+
+-API-based authentication
+
+-Token + user persistence (localStorage)
+
+-Protected routes
+
+-Logout with history replace
+
+-Auth edge-case handling
+
+-Dashboard
+
+-Responsive layout (Sidebar + Topbar)
+
+-Token debug indicator
+
+-Session persistence
+
+-Users Module
+
+-Users list (RTK async fetch)
+
+-Client-side search
+
+-Row click navigation
+
+-User detail page
+
+-Loading and error states
+
+-Quality & Production Safety
+
+-Custom 404 page
+
+-Dashboard-level nested 404 handling
+
+-Global Error Boundary
+
+-Auth state hydration on refresh
+
+-Back-button protection after logout
+
+##🧠 Development Methodology
+
+This project was built following a sprint-based structure:
+
+Sprint 1 Scope
+Ticket	     Description	                            SP
+FE-01	       Project setup	                           3
+FE-03	       Login UI	                                 3
+FE-04	       Auth API integration	                     5
+FE-05	       Route guard + persist	                   5
+FE-06	       Dashboard layout	                         4
+FE-07	       Dashboard stats	                         3
+FE-08	       Users list	                               6
+FE-09	       User detail	                             4
+FE-10	       Quality (404 + ErrorBoundary )	           5
+FE-11	       Documentation	                           3
+
+Total: 41 Story Points
+
+Each feature was developed using:
+
+Feature branches
+
+Clean commits
+
+Pull Requests
+
+Squash merge strategy
+
+##📂 Folder Structure
+src/
+ ├── app/
+ │   ├── store.ts
+ │   └── hooks.ts
+ ├── features/
+ │   └── auth/
+ │       ├── authSlice.ts
+ │       ├── authApi.ts
+ │       └── authTypes.ts
+ ├── Pages/
+ │   ├── LoginPage.tsx
+ │   ├── DashboardHomePage.tsx
+ │   ├── UsersPage.tsx
+ │   ├── UserDetailPage.tsx
+ │   └── NotFoundPage.tsx
+ ├── Layouts/
+ │   └── DashboardLayout.tsx
+ ├── Components/
+ │   ├── Topbar.tsx
+ │   └── Sidebar.tsx
+ └── CSS/
+
+##🔑 Demo Credentials
+username: emilys
+password: emilyspass
+
+▶ Run Locally
+git clone <your-repo-url>
+cd auth-api-dashboard
+npm install
+npm run dev
+
+##🧪 Demo Flow
+
+-Login
+
+-Dashboard
+
+-Navigate to Users
+
+-Search users
+
+-Open user detail
+
+-Test 404 route
+
+-Logout
+
+-Test back-button protection
+
+##🎯 Engineering Highlights
+
+-State hydration from localStorage on refresh
+
+-Secure route guarding
+
+-Error boundary for runtime crash handling
+
+-Nested route-based 404 handling
+
+-Branch-per-ticket Git workflow
+
+-Sprint-driven feature delivery
+
+##📌 Future Improvements
+
+-Role-based access
+
+-Pagination for users
+
+-Dark/light theme toggle
+
+-Unit tests (Jest + RTL)
+
+-Axios interceptor for token refresh
+
+-Global loading overlay
+
+##👨‍💻 Author
+
+Semir Reyhan
+Frontend Developer (Transitioning from Civil Engineering)

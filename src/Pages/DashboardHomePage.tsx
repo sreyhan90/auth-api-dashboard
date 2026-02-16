@@ -102,10 +102,6 @@ export default function DashboardHomePage() {
           Go to Users
         </Link>
       </div>
-      <footer className="dashboard__footer">
-        Bugün sadece UI iskeleti. Login/token bağlanınca burası protected
-        olacak.
-      </footer>
     </div>
   );
 }

@@ -23,9 +23,6 @@ export default function NotFoundPage() {
           <Link className="notfound__btn" to="/dashboard">
             Back to Dashboard
           </Link>
-          <Link className="notfound__btn notfound__btn--ghost" to="/login">
-            Go to Login
-          </Link>
         </div>
       </div>
     </div>

@@ -9,7 +9,6 @@ import UsersPage from "./Pages/UsersPage";
 import UserDetailPage from "./Pages/UserDetailPage";
 import DashboardLayout from "./Layouts/DashboardLayout";
 import NotFoundPage from "./Pages/NotFoundPage";
-
 function App() {
   const token = useAppSelector((s) => s.auth.token);
   return (
