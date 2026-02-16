@@ -1,8 +1,8 @@
-##📦 Auth + API Dashboard
+📦 Auth + API Dashboard
 
 A modern React dashboard application built with authentication, protected routing, API integration, and production-level error handling.
 
-##🚀 Project Overview
+🚀 Project Overview
 
 This project simulates a real-world frontend workflow using:
 
@@ -18,7 +18,7 @@ This project simulates a real-world frontend workflow using:
 
 -The goal was not just to build a dashboard, but to follow a real team development process.
 
-##🛠 Tech Stack
+🛠 Tech Stack
 
 -React + Vite + TypeScript
 
@@ -32,8 +32,8 @@ This project simulates a real-world frontend workflow using:
 
 -DummyJSON API
 
-##🔐 Features
-#Authentication
+🔐 Features
+Authentication
 
 -Login with Formik + Yup validation
 
@@ -79,7 +79,7 @@ This project simulates a real-world frontend workflow using:
 
 -Back-button protection after logout
 
-##🧠 Development Methodology
+🧠 Development Methodology
 
 This project was built following a sprint-based structure:
 
@@ -108,7 +108,7 @@ Pull Requests
 
 Squash merge strategy
 
-##📂 Folder Structure
+📂 Folder Structure
 src/
   app/
     store.ts
@@ -133,7 +133,7 @@ src/
   CSS/
 
 
-##🔑 Demo Credentials
+🔑 Demo Credentials
 username: emilys
 password: emilyspass
 
@@ -143,7 +143,7 @@ cd auth-api-dashboard
 npm install
 npm run dev
 
-##🧪 Demo Flow
+🧪 Demo Flow
 
 -Login
 
@@ -160,8 +160,7 @@ npm run dev
 -Logout
 
 -Test back-button protection
-
-##🎯 Engineering Highlights
+🎯 Engineering Highlights
 
 -State hydration from localStorage on refresh
 
@@ -175,7 +174,7 @@ npm run dev
 
 -Sprint-driven feature delivery
 
-##📌 Future Improvements
+📌 Future Improvements
 
 -Role-based access
 
@@ -188,8 +187,7 @@ npm run dev
 -Axios interceptor for token refresh
 
 -Global loading overlay
-
-##👨‍💻 Author
+👨‍💻 Author
 
 Semir Reyhan
 Frontend Developer (Transitioning from Civil Engineering)
