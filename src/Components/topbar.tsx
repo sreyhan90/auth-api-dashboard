@@ -1,4 +1,4 @@
-import "../CSS/topbar.css";
+import "../CSS/Topbar.css";
 import { useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../app/hooks";
 import { logout } from "../features/auth/authSlice";
