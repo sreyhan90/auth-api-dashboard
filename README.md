@@ -1,193 +1,118 @@
-📦 Auth + API Dashboard
+# 🔐 Auth API Dashboard
 
-A modern React dashboard application built with authentication, protected routing, API integration, and production-level error handling.
+A modern, production-style dashboard application built with **React, TypeScript, and Redux Toolkit**, featuring authentication, protected routes, and real-time data handling.
 
-🚀 Project Overview
+🚀 **Live Demo:** https://your-live-demo-link.vercel.app
+💻 **GitHub:** https://github.com/sreyhan90/auth-api-dashboard
 
-This project simulates a real-world frontend workflow using:
+---
 
--Sprint-based development
+## ✨ Features
 
--Feature branches
+- 🔐 Authentication (Login / Logout)
+- 🔒 Protected Routes (Route Guard)
+- 📊 Dashboard Layout with Nested Routing
+- 👥 Users List & Detail Pages
+- 🔍 Dynamic Routing (`/users/:id`)
+- ⚡ API Integration (DummyJSON)
+- 🧠 Global State Management (Redux Toolkit)
+- 💾 Persistent Auth (localStorage)
+- ❌ Custom 404 Page
+- 🚦 Loading & Error Handling
 
--Pull Request workflow
+---
 
--Definition of Done (DoD)
+## 🧠 Tech Stack
 
--Jira-style ticket breakdown
+- **Frontend:** React (Vite) + TypeScript
+- **State Management:** Redux Toolkit
+- **Routing:** React Router DOM
+- **API:** Axios (DummyJSON API)
+- **Styling:** CSS / Tailwind (if used)
+- **Tools:** Git, GitHub, VS Code
 
--The goal was not just to build a dashboard, but to follow a real team development process.
+---
 
-🛠 Tech Stack
+## 🔐 Authentication Flow
 
--React + Vite + TypeScript
+- User logs in via API (`/auth/login`)
+- Access token is stored in **Redux + localStorage**
+- Protected routes are guarded via `ProtectedRoute`
+- Unauthorized users are redirected to `/login`
 
--React Router
+---
 
--Redux Toolkit
+## 🗂️ Project Structure
 
--Formik + Yup
-
--Custom CSS (glassmorphism style UI)
-
--DummyJSON API
-
-🔐 Features
-Authentication
-
--Login with Formik + Yup validation
-
--API-based authentication
-
--Token + user persistence (localStorage)
-
--Protected routes
-
--Logout with history replace
-
--Auth edge-case handling
-
--Dashboard
-
--Responsive layout (Sidebar + Topbar)
-
--Token debug indicator
-
--Session persistence
-
--Users Module
-
--Users list (RTK async fetch)
-
--Client-side search
-
--Row click navigation
-
--User detail page
-
--Loading and error states
-
--Quality & Production Safety
-
--Custom 404 page
-
--Dashboard-level nested 404 handling
-
--Global Error Boundary
-
--Auth state hydration on refresh
-
--Back-button protection after logout
-
-🧠 Development Methodology
-
-This project was built following a sprint-based structure:
-
-Sprint 1 Scope
-Ticket	     Description	                            SP
-FE-01	       Project setup	                           3
-FE-03	       Login UI	                                 3
-FE-04	       Auth API integration	                     5
-FE-05	       Route guard + persist	                   5
-FE-06	       Dashboard layout	                         4
-FE-07	       Dashboard stats	                         3
-FE-08	       Users list	                               6
-FE-09	       User detail	                             4
-FE-10	       Quality (404 + ErrorBoundary )	           5
-FE-11	       Documentation	                           3
-
-Total: 41 Story Points
-
-Each feature was developed using:
-
-Feature branches
-
-Clean commits
-
-Pull Requests
-
-Squash merge strategy
-
-📂 Folder Structure
+```bash
 src/
-  app/
-    store.ts
-    hooks.ts
-  features/
-    auth/
-      authSlice.ts
-      authApi.ts
-      authTypes.ts
-  Pages/
-    LoginPage.tsx
-    DashboardHomePage.tsx
-    UsersPage.tsx
-    UserDetailPage.tsx
-    NotFoundPage.tsx
-  Layouts/
-    DashboardLayout.tsx
-  Components/
-    Topbar.tsx
-    Sidebar.tsx
-    ErrorBoundary.tsx
-  CSS/
+├── app/              # Redux store & hooks
+├── features/         # Auth slice & API logic
+├── Pages/            # Page components
+├── Components/       # Reusable UI components
+├── Layouts/          # Dashboard layout
+├── Routes/           # Protected route logic
+```
 
+---
 
-🔑 Demo Credentials
-username: emilys
-password: emilyspass
+## ⚙️ Installation
 
-▶ Run Locally
-git clone <your-repo-url>
+```bash
+git clone https://github.com/sreyhan90/auth-api-dashboard.git
 cd auth-api-dashboard
 npm install
 npm run dev
+```
 
-🧪 Demo Flow
+---
 
--Login
+## 🔑 Demo Credentials
 
--Dashboard
+```txt
+Username: kminchelle
+Password: 0lelplR
+```
 
--Navigate to Users
+---
 
--Search users
+## 🚀 Production Build
 
--Open user detail
+```bash
+npm run build
+npm run preview
+```
 
--Test 404 route
+---
 
--Logout
+## 🎯 Key Highlights
 
--Test back-button protection
-🎯 Engineering Highlights
+- Implemented **secure authentication flow**
+- Built **protected routing system**
+- Managed global state with Redux Toolkit
+- Designed scalable and modular folder structure
+- Handled loading, error, and edge cases
 
--State hydration from localStorage on refresh
+---
 
--Secure route guarding
+## 📌 Future Improvements
 
--Error boundary for runtime crash handling
+- 🔄 Add React Query for data fetching
+- 🧪 Unit & integration tests (Jest / React Testing Library)
+- 🎨 Improve UI/UX with design system
+- 🔐 Token refresh & better auth handling
 
--Nested route-based 404 handling
+---
 
--Branch-per-ticket Git workflow
+## 👨‍💻 Author
 
--Sprint-driven feature delivery
+**Semir Reyhan**
 
-📌 Future Improvements
+- Frontend Developer (Next.js • React • TypeScript)
+- Civil Engineer → Software Developer
 
--Role-based access
+---
 
--Pagination for users
+## ⭐ Support
 
--Dark/light theme toggle
-
--Unit tests (Jest + RTL)
-
--Axios interceptor for token refresh
-
--Global loading overlay
-👨‍💻 Author
-
-Semir Reyhan
-Frontend Developer (Transitioning from Civil Engineering)
+If you like this project, consider giving it a ⭐ on GitHub!

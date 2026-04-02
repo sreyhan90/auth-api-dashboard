@@ -20,8 +20,8 @@ export default function NotFoundPage() {
         </div>
 
         <div className="notfound__actions">
-          <Link className="notfound__btn" to="/dashboard">
-            Back to Dashboard
+          <Link className="notfound__btn" to={token ? "/dashboard" : "/login"}>
+            {token ? "Back to Dashboard" : "Go to Login"}
           </Link>
         </div>
       </div>
